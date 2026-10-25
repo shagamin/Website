@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: sans-serif;
+        }
+        .heading-container{
+            max-width: 90%;
+            margin: auto;
+            padding: 15px 0;
+        }
+        .heading-container > h1{
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+            font-size: 36px;
+        }
+        .heading-container > h2{
+            background-color: rgb(206, 241, 255);
+            margin-top: 15px;
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 5px solid blue;
+            color: blue;
+            font-size: 28px;
+        }
+
+        .container{
+            max-width: 90%;
+            margin: auto;
+            background-color: white;
+            box-shadow: 0 0 5px gray;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .form-wrapper{
+            display: flex;
+            gap: 10px;    
+        }
+        .form-wrapper > .name,
+        .form-wrapper > .price{
+            flex-grow: 2;
+            padding: 10px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            outline: none;
+            font-size: 18px;
+
+        }
+        .form-wrapper > .select,
+        .form-wrapper > .btn{
+            flex-grow: 1;
+        }
+        .form-wrapper > .select{
+            padding: 10px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            outline: none;
+            font-size: 18px;
+        }
+        .form-wrapper > .btn{
+            display: flex;
+            gap: 5px;
+        }
+        .form-wrapper > .btn > button{
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            outline: none;
+            font-size: 18px;
+            color: white;
+        }
+        .form-wrapper > .btn > button:first-child{
+            background-color: blue;
+        }
+        .form-wrapper > .btn > button:last-child{
+            background-color: gray;
+        }
+
+        .item-container > p{
+            padding: 20px 0;
+            font-size: 18px;
+            color: rgb(60, 60, 60);
+        }
+        .item-container > p > .item-counter{
+            background-color: blue;
+            padding: 5px 15px;
+            color: white;
+            border-radius: 15px;
+        }
+
+        .table-container{
+            width: 100%;
+            text-align: left;
+            border-collapse: collapse;
+        }
+        .table-container > thead > tr > th{
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        .table-container > tbody > tr > td{
+            font-size: 16px;
+            text-align: left;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .table-container > tbody > tr:hover{
+            background-color: rgb(246, 246, 246);
+        }
+        #price{
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header class="heading-container">
+        <h1>🛒 Addbook Shop</h1>
+        <h2>📋 Product List</h2>
+    </header>
+
+    <section class="container">
+        <form class="form-wrapper">
+            <input type="text" class="name" placeholder="🔍 Search by name...">
+            <select class="select">
+                <option selected value="all">--- All Category---</option>
+                <option value="food">Food</option>
+                <option value="drink">Drink</option>
+                <option value="houseHold">HouseHold</option>
+
+            </select>
+            <input type="text" class="price" placeholder="💰 Max price ($)">
+            <div class="btn">
+                <button type="button" class="btn-search" onclick="">🔍 Search</button>
+                <button type="button" class="btn-cancel">❌ Clear</button>
+            </div>
+        </form>
+
+        <div class="item-container">
+            <p>Result: <span class="item-counter">8 items</span></p>
+        </div>
+
+        <table class="table-container">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Rice</td>
+                    <td id="price">$50</td>
+                    <td>Food</td>
+                    <td>100</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <script type="module" src="can.js"></script>
+    
+</body>
+</html>
